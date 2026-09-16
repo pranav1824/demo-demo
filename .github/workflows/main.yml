@@ -8,7 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment: demo-demo
+    environment: demo
  
     steps:
       - name: Checkout code
@@ -19,8 +19,8 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: eu-north-1
-          # aws-region: ${{ vars.AWS_REGION }}
+          # aws-region: eu-north-1
+          aws-region: ${{ vars.AWS_REGION }}
  
       - name: Deploy website to S3
         run: |
